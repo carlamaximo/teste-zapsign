@@ -1,0 +1,24 @@
+<div class="mx-5">
+  <h3 class="mx-5 my-5">Documentos</h3>
+  <ul *ngFor="let doc of docs" class="list-group">
+    <div class="mb-5">
+        <li class="list-group-item list-group-item-action list-group-item-light">
+          Documento: {{doc.name}}
+        </li>
+        <li class="list-group-item list-group-item-action list-group-item-light">
+          Assinado: {{doc.signed}}
+        </li>
+        <li class="list-group-item list-group-item-action list-group-item-light">
+          Empresa: {{doc.company}}
+        </li>
+        <li class="list-group-item list-group-item-action list-group-item-light">
+          Criado por: {{doc.created_by}}
+        </li>
+        <br>
+      <div class="d-flex">
+        <button class="btn btn-primary mx-1">Editar</button>
+        <button class="btn btn-danger mx-1" (click)="deleteDoc(doc)">Deletar</button>
+      </div>
+    </div>
+  </ul>  
+  </div>

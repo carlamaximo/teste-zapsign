@@ -1,0 +1,33 @@
+<div class="mx-5">
+  <h3 class="mx-5 my-5">Empresas</h3>
+  <ul *ngFor="let company of companies" class="list-group">
+    <div class="mb-5">
+      <li
+        class="list-group-item list-group-item-action list-group-item-light"
+        >
+        Empresa: {{company.name}}
+      </li>
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        Id: {{company.id_company}}
+      </li>
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        Data de criação: {{company.created_at}}
+      </li>
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        última atualização: {{company.last_update_at}}
+      </li>
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        Localização: {{company.locale}}
+      </li>
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        Usuários: {{company.users}}
+      </li>
+      <br>
+    <div class="d-flex">
+      <button class="btn btn-primary mx-1">Editar</button>
+      <button class="btn btn-danger mx-1" (click)="deleteCompany(company)">Deletar</button>
+    </div>
+    </div>
+  </ul>  
+  </div>
+  

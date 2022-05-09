@@ -1,0 +1,51 @@
+<div class="mx-5">
+  <h3 class="mx-5 my-5">Usuários</h3>
+  <ul *ngFor="let user of users" class="list-group">
+    <div class="mb-5">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        Id: {{user.id_user}}
+      </li>
+      <li
+      class="list-group-item list-group-item-action list-group-item-light"
+      [(ngModel)]="user.email"
+      name="fieldName" ngDefaultControl
+      >
+        Email: {{user.email}}
+      </li>
+      <br>
+      <form>
+        <label for="email">
+          <p>Editar email:</p>
+          
+          <input 
+            name="fieldName"
+            ngDefaultControl
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            [(ngModel)]="user.email"
+          >
+        </label>
+      </form>
+      <br>        
+      <div class="d-flex">
+        <button class="btn btn-primary mx-1" (click)="updateUser(user)">Editar</button>
+        <button class="btn btn-danger mx-1" (click)="deleteUser(user)">Deletar</button>
+        <button class="btn btn-secondary mx-1" (click)="userClicked(user)">+ Detalhes</button>
+      </div>
+    </div>
+  </ul> 
+  <p>
+    {{selected_user.email}}
+  </p>
+  <p>
+    {{selected_user.created_at}}
+  </p>
+  <p>
+    {{selected_user.email_verified}}
+  </p>
+  <p>
+    {{selected_user.last_updated_at}}
+  </p>
+</div>

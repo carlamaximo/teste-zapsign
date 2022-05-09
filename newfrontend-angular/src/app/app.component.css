@@ -1,0 +1,11 @@
+.div-principal {
+  background-color: rgb(215, 215, 248);
+  padding-bottom: 20%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.div-titulo-logo {
+  justify-content: center;
+  padding-top: 3%;
+}
