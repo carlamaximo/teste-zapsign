@@ -22,31 +22,15 @@ export class NewCompanyComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCreatedUsers();
-    console.log('iniciou',this.created_users);
   }
 
   getCreatedUsers() {
     this.apiUser.getAllUsers().subscribe(
       data => {
-        console.log(data);
         data.forEach((e:any) => {
           this.created_users.push(e.email);
           this.invited_users.push(e.email);
         });
-      },
-      error => {
-        console.log(error.message);
-      }
-    )
-  }
-
-  getCreatedCompanies() {
-    this.apiCompany.getAllCompanies().subscribe(
-      data => {
-        // console.log(data);
-        // data.forEach((e:any) => {
-        //   this.created_users.push(e.email)
-        // });
       },
       error => {
         console.log(error.message);
@@ -60,8 +44,8 @@ export class NewCompanyComponent implements OnInit {
         alert('Empresa criada com sucesso!');
       },
       error => {
+        alert('Desculpe! Não foi possível criar uma nova empresa. Essa funcionalidade ainda está sendo implementada.');
         console.log(error.message);
-        alert('Ops! Não foi possível criar a empresa. Por favor, verifique seus dados.')
       }
     )
   }

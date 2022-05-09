@@ -9,7 +9,7 @@ import { ApiService } from './services/api.service';
 })
 export class UserComponent implements OnInit {
   users = [
-    { email: 'Carla' , id_user: '', password: '', verified: ''}
+    { email: '' , id_user: '', password: '', verified: ''}
   ]
   selected_user = {
     email: null,
@@ -41,12 +41,11 @@ export class UserComponent implements OnInit {
   userClicked = (user:any) => {
     this.api.getUser(user.id_user).subscribe(
       data => {
-        console.log(data[0]);
         this.selected_user = data[0];
         this.selected_id = data[0].id_user;
       },
       error => {
-        console.log(error.message)
+        console.log(error.message);
       }
     )
   }
@@ -54,9 +53,11 @@ export class UserComponent implements OnInit {
   updateUser = (selected_user:any) => {
     this.api.updateUser(selected_user).subscribe(
       data => {
-        console.log(data[0]);
+        alert('Usuário editado com sucesso!');
+        // console.log(data[0]);
       },
       error => {
+        alert('Não foi possível editar esse usuário.');
         console.log(error.message);
       }
     )
@@ -65,6 +66,7 @@ export class UserComponent implements OnInit {
   deleteUser = (user:any) => {
     this.api.deleteUser(user.id_user).subscribe(
       data => {
+        alert('Usuário deletado com sucesso!');
         let index:number = 0;
         this.users.forEach((e, i,) => {
           if (e.id_user === user.id_user) index = i;
@@ -73,6 +75,7 @@ export class UserComponent implements OnInit {
 
       },
       error => {
+        alert('Ops, não foi possível deletar esse usuário.')
         console.log(error.message);
       }
     )

@@ -1,7 +1,7 @@
- <div class="d-flex justify-content-center my-3 flex-row">
+ <div class="d-flex justify-content-center my-5 flex-row">
   <form action="post">
 
-    <label for="name-doc" class="">
+    <label for="name-doc" class="mx-3 my-3">
       <p>Digite o nome do Documento:</p>
       <input
         type="text"
@@ -12,7 +12,7 @@
       >
     </label>
 
-    <label for="deleted">
+    <label for="deleted" class="mx-3">
       <p>Deletado?</p>
       <input
         class="form-check-input"
@@ -30,7 +30,7 @@
       > Não
     </label>
 
-    <label for="signed">
+    <label for="signed" class="mx-3">
       <p>Assinado?</p>
       <input
         class="form-check-input"
@@ -49,7 +49,7 @@
     </label>
 
       <div class="d-flex">
-        <div class="ml-3 my-2">
+        <div class="mx-3 my-4">
           <p>Selecione a Empresa:</p>
           <label
             for="options-companies"
@@ -66,7 +66,7 @@
         {{created_company}}
         </label>
     </div>
-    <div class="mx-3 my-2">
+    <div class="mx-3 my-4">
       <p>Selecione o usuário que está criando:</p>
       <label
         for="options-users"
@@ -79,15 +79,16 @@
         name="created_user"
         id="options-users"
         value=""
-      > 
-      {{created_user}}
+      >
+        {{created_user}}
       </label>
     </div>
     </div>
 
     <button
-      class="btn btn-primary my-3" 
+      class="btn btn-primary my-2" 
       type="submit"
+      (click)="saveNewDoc()"
     >
     Criar Novo Documento
   </button>

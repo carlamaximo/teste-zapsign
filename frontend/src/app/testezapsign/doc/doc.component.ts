@@ -34,6 +34,7 @@ export class DocComponent implements OnInit {
     console.log(doc);
     this.api.deleteDoc(doc.id_doc).subscribe(
       data => {
+        alert('Documento deletado com sucesso!');
         let index:number = 0;
         this.docs.forEach((e, i,) => {
           if (e.id_doc === doc.id_doc) index = i;
@@ -42,6 +43,7 @@ export class DocComponent implements OnInit {
 
       },
       error => {
+        alert('Ops, não foi possível deletar esse documento.');
         console.log(error.message);
       }
     )

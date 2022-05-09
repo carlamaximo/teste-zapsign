@@ -59,29 +59,19 @@ export class CompanyComponent implements OnInit {
     )
   }
 
-  // updateUser = (selected_user:any) => {
-  //   this.api.updateUser(selected_user).subscribe(
-  //     data => {
-  //       console.log(data[0]);
-  //     },
-  //     error => {
-  //       console.log(error.message);
-  //     }
-  //   )
-  // }
-
   deleteCompany = (company:any) => {
     console.log(company);
     this.api.deleteCompany(company.id_company).subscribe(
       data => {
+        alert('Empresa deletada com sucesso!');
         let index:number = 0;
         this.companies.forEach((e, i,) => {
           if (e.id_company === company.id_company) index = i;
           });
           this.companies.splice(index, 1);
-
       },
       error => {
+        alert('Ops, não foi possível deletar essa empresa.');
         console.log(error.message);
       }
     )

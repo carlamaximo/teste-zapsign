@@ -21,6 +21,11 @@ export class ApiService {
     { headers: this.httpHeaders })
   }
 
+  createDoc(doc:any):Observable<any> {
+    return this.http.post(this.baseUrl + 'docs/', doc,
+    { headers: this.httpHeaders })
+  }
+
 }
 
 
